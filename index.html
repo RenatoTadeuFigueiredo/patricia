@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
 </head>
@@ -65,38 +65,41 @@
           </ul>
         </div>
 
-        <div class="hero-card">
-          <div class="hero-card-inner">
-            <p class="hero-card-tag">Atendimento Presencial · São Paulo</p>
-            <h2>Espaço seguro para aprender, sentir e crescer.</h2>
-            <p>
-              Acompanhamento que integra aspectos cognitivos, emocionais e escolares,
-              construído em parceria com a família e, quando necessário, com a escola.
-            </p>
-
-            <div class="hero-stats">
-              <div class="hero-stat">
-                <span class="hero-stat-number">Infantil</span>
-                <span class="hero-stat-label">Crianças</span>
-              </div>
-              <div class="hero-stat">
-                <span class="hero-stat-number">Juvenil</span>
-                <span class="hero-stat-label">Adolescentes</span>
+        <div class="hero-image-wrapper">
+          <div class="hero-image">
+            <img
+              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=500&fit=crop&crop=faces"
+              alt="Criança estudando com atenção e concentração"
+              loading="eager"
+            >
+          </div>
+          <div class="hero-floating-card">
+            <div class="hero-floating-card-inner">
+              <div class="hero-floating-icon">🧠</div>
+              <div class="hero-floating-text">
+                <h4>Neuroeducação</h4>
+                <p>Aprendizagem com base científica</p>
               </div>
             </div>
-
-            <div class="hero-note">
-              <span class="hero-dot"></span>
-              <p>Primeiro contato sem compromisso para entender a necessidade da família.</p>
-            </div>
+          </div>
+          <div class="hero-floating-card-2">
+            <span class="stat-number">+</span>
+            <span class="stat-label">Atendimento<br>Personalizado</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- SOBRE -->
-    <section id="sobre" class="section section-alt">
-      <div class="container grid-2">
+    <section id="sobre" class="section section-alt section-with-image">
+      <div class="container section-image-grid">
+        <div class="section-image">
+          <img
+            src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=500&h=450&fit=crop"
+            alt="Ambiente acolhedor de aprendizagem"
+            loading="lazy"
+          >
+        </div>
         <div class="section-text">
           <h2>Sobre o trabalho</h2>
           <p>
@@ -114,20 +117,20 @@
             estudante se sinta capaz, confiante e protagonista do próprio processo
             de aprendizagem.
           </p>
-        </div>
 
-        <div class="section-card">
-          <div class="section-card-header">
-            <h3>Para quem é indicado</h3>
+          <div class="section-card">
+            <div class="section-card-header">
+              <h3>Para quem é indicado</h3>
+            </div>
+            <ul class="chip-list">
+              <li>Dificuldades de aprendizagem</li>
+              <li>Desatenção e desorganização</li>
+              <li>Desempenho escolar abaixo do esperado</li>
+              <li>Dificuldades na leitura, escrita ou matemática</li>
+              <li>Ansiedade relacionada à escola</li>
+              <li>Transição de ciclos escolares</li>
+            </ul>
           </div>
-          <ul class="chip-list">
-            <li>Dificuldades de aprendizagem</li>
-            <li>Desatenção e desorganização</li>
-            <li>Desempenho escolar abaixo do esperado</li>
-            <li>Dificuldades na leitura, escrita ou matemática</li>
-            <li>Ansiedade relacionada à escola</li>
-            <li>Transição de ciclos escolares</li>
-          </ul>
         </div>
       </div>
     </section>
@@ -146,6 +149,7 @@
 
         <div class="cards-grid">
           <article class="card">
+            <div class="card-icon">📚</div>
             <h3>Psicopedagogia Clínica</h3>
             <p>
               Avaliação e intervenção individual com crianças e adolescentes,
@@ -160,6 +164,7 @@
           </article>
 
           <article class="card">
+            <div class="card-icon">🏫</div>
             <h3>Psicopedagogia Institucional</h3>
             <p>
               Articulação com escolas e instituições para acompanhar o estudante
@@ -174,6 +179,7 @@
           </article>
 
           <article class="card">
+            <div class="card-icon">🧠</div>
             <h3>Neuroeducação</h3>
             <p>
               Estratégias baseadas em neurociência para apoiar atenção,
