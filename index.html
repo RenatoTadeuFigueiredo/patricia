@@ -260,7 +260,7 @@
               <li>
                 <span class="contact-label">E-mail:</span>
                 <a href="mailto:Patriciasenaeducar@gmail.com">
-                  Patriciasenaeducar@gmail.com
+                  patriciasenaeducar@gmail.com
                 </a>
               </li>
               <li>
@@ -275,46 +275,86 @@
           </div>
         </div>
 
-        <div class="contact-form-wrapper">
-          <div class="contact-form-card">
-            <h3>Envie uma mensagem</h3>
-            <p class="contact-form-subtitle">
-              Este formulário é ilustrativo. Configure o envio de e-mails conforme
-              o serviço de hospedagem que escolher.
-            </p>
-            <form class="contact-form" action="#" method="post">
-              <div class="form-group">
-                <label for="nome">Nome do responsável</label>
-                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+          <div class="contact-form-wrapper">
+              <div class="contact-form-card">
+                  <h3>Envie uma mensagem</h3>
+                  <form class="contact-form" id="contact-form">
+
+                      <div class="form-group">
+                          <label for="nome">Nome do responsável</label>
+                          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="email">E-mail para contato</label>
+                          <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="faixa-etaria">Faixa etária da criança/adolescente</label>
+                          <select id="faixa-etaria" name="faixa-etaria" required>
+                              <option value="">Selecione</option>
+                              <option value="4-6">4 a 6 anos</option>
+                              <option value="7-10">7 a 10 anos</option>
+                              <option value="11-14">11 a 14 anos</option>
+                              <option value="15-17">15 a 17 anos</option>
+                          </select>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="mensagem">Conte brevemente a sua demanda</label>
+                          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Ex: dificuldades na leitura, atenção, organização para estudar..." required></textarea>
+                      </div>
+
+                      <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+                          Enviar mensagem
+                      </button>
+
+                      <p id="form-message" style="margin-top: 0.75rem; font-size: 0.85rem; text-align: center;"></p>
+                  </form>
               </div>
-              <div class="form-group">
-                <label for="email">E-mail para contato</label>
-                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
-              </div>
-              <div class="form-group">
-                <label for="faixa-etaria">Faixa etária da criança/adolescente</label>
-                <select id="faixa-etaria" name="faixa-etaria" required>
-                  <option value="">Selecione</option>
-                  <option value="4-6">4 a 6 anos</option>
-                  <option value="7-10">7 a 10 anos</option>
-                  <option value="11-14">11 a 14 anos</option>
-                  <option value="15-17">15 a 17 anos</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="mensagem">Conte brevemente a sua demanda</label>
-                <textarea id="mensagem" name="mensagem" rows="4" placeholder="Ex: dificuldades na leitura, atenção, organização para estudar..." required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary btn-full" disabled>
-                Enviar mensagem (exemplo)
-              </button>
-              <p class="contact-hint">
-                Para ativar o formulário de fato, você pode integrar com serviços
-                como Netlify Forms, Formspree ou outro de sua preferência.
-              </p>
-            </form>
           </div>
-        </div>
+
+          <script>
+              document.getElementById('contact-form').addEventListener('submit', async (e) => {
+                  e.preventDefault();
+
+                  const submitBtn = document.getElementById('submit-btn');
+                  const formMessage = document.getElementById('form-message');
+                  const form = e.target;
+
+                  // Desabilitar botão durante envio
+                  submitBtn.disabled = true;
+                  submitBtn.textContent = 'Enviando...';
+                  formMessage.textContent = '';
+
+                  try {
+                      const formData = new FormData(form);
+
+                      // IMPORTANTE: Troque pela URL do seu Worker
+                      const response = await fetch('https://formulario.renato-tadeu-figueiredo.workers.dev', {
+                          method: 'POST',
+                          body: formData,
+                      });
+
+                      const result = await response.json();
+
+                      if (result.success) {
+                          formMessage.style.color = '#22c55e';
+                          formMessage.textContent = '✓ Mensagem enviada com sucesso! Entraremos em contato em breve.';
+                          form.reset();
+                      } else {
+                          throw new Error(result.message);
+                      }
+                  } catch (error) {
+                      formMessage.style.color = '#ef4444';
+                      formMessage.textContent = '✗ Erro ao enviar mensagem. Tente novamente ou entre em contato por e-mail.';
+                  } finally {
+                      submitBtn.disabled = false;
+                      submitBtn.textContent = 'Enviar mensagem';
+                  }
+              });
+          </script>
       </div>
     </section>
   </main>
