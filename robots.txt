@@ -1,0 +1,24 @@
+# Robots.txt para patriciasenapsi.com.br
+# Permite todos os crawlers
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://patriciasenapsi.com.br/sitemap.xml
+
+# Crawl-delay (opcional - ajuda a não sobrecarregar o servidor)
+Crawl-delay: 1
+
+# Google específico
+User-agent: Googlebot
+Allow: /
+
+# Bing específico
+User-agent: Bingbot
+Allow: /
+
+# Bloqueia pastas que não devem ser indexadas (se existirem)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
