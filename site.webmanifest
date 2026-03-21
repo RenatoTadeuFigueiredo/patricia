@@ -1,0 +1,16 @@
+{
+  "name": "Patricia Sena - Psicopedagoga",
+  "short_name": "Patricia Sena",
+  "description": "Neuroeducacao e Psicopedagogia para criancas e adolescentes em Sao Paulo",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf9f7",
+  "theme_color": "#7a58be",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

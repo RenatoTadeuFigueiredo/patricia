@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO Básico -->
+  <!-- SEO Basico -->
   <title>Psicopedagoga em São Paulo | Patrícia Sena - Neuroeducação e Psicopedagogia</title>
   <meta name="description" content="Psicopedagoga em São Paulo especializada em neuroeducação para crianças e adolescentes. Atendimento de dificuldades de aprendizagem, TDAH, dislexia, desatenção e desenvolvimento socioemocional. Agende uma consulta!">
   <meta name="keywords" content="psicopedagoga São Paulo, neuroeducação, psicopedagogia clínica, dificuldades de aprendizagem, TDAH, dislexia, psicopedagoga infantil, avaliação psicopedagógica, reforço escolar SP, tratamento dislexia, psicopedagoga SP zona sul, atendimento psicopedagógico">
@@ -15,7 +15,7 @@
   <!-- Canonical URL -->
   <link rel="canonical" href="https://patriciasenapsi.com.br/">
 
-  <!-- Idioma e região -->
+  <!-- Idioma e regiao -->
   <meta name="language" content="pt-BR">
   <meta name="geo.region" content="BR-SP">
   <meta name="geo.placename" content="São Paulo">
@@ -38,26 +38,26 @@
   <meta name="twitter:description" content="Neuroeducação e psicopedagogia para crianças e adolescentes. Atendimento especializado em dificuldades de aprendizagem.">
   <meta name="twitter:image" content="https://patriciasenapsi.com.br/og-image.jpg">
 
-  <!-- Favicon e ícones -->
+  <!-- Favicon e icones -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <meta name="theme-color" content="#7c3aed">
-  <meta name="msapplication-TileColor" content="#7c3aed">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#7a58be">
+  <meta name="msapplication-TileColor" content="#7a58be">
 
   <!-- Preconnect para performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="dns-prefetch" href="https://wa.me">
 
-  <!-- Preload recursos críticos -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
+  <!-- Preload recursos criticos -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Schema.org JSON-LD (Dados Estruturados) -->
   <script type="application/ld+json">
@@ -65,7 +65,7 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
+        "@type": ["LocalBusiness", "ProfessionalService"],
         "@id": "https://patriciasenapsi.com.br/#business",
         "name": "Patrícia Sena - Psicopedagoga",
         "description": "Atendimento em neuroeducação e psicopedagogia para crianças e adolescentes em São Paulo. Especialista em dificuldades de aprendizagem, TDAH, dislexia e desenvolvimento socioemocional.",
@@ -95,7 +95,6 @@
           "opens": "08:00",
           "closes": "18:00"
         },
-        "sameAs": []
       },
       {
         "@type": "Person",
@@ -153,18 +152,6 @@
         "inLanguage": "pt-BR"
       },
       {
-        "@type": "BreadcrumbList",
-        "@id": "https://patriciasenapsi.com.br/#breadcrumb",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Início",
-            "item": "https://patriciasenapsi.com.br/"
-          }
-        ]
-      },
-      {
         "@type": "FAQPage",
         "@id": "https://patriciasenapsi.com.br/#faq",
         "mainEntity": [
@@ -206,17 +193,31 @@
   }
   </script>
 </head>
-<body itemscope itemtype="https://schema.org/LocalBusiness">
+<body>
   <!-- Skip link para acessibilidade -->
   <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
 
   <!-- HEADER / NAV -->
   <header class="header" role="banner">
     <div class="container header-inner">
-      <a href="#topo" class="logo" aria-label="Patrícia Sena - Ir para o início">
-        <div class="logo-mark" aria-hidden="true">PS</div>
+      <a href="/" class="logo" aria-label="Patrícia Sena - Ir para o início">
+        <div class="logo-mark" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="42" height="42" aria-hidden="true">
+            <defs>
+              <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#7a58be"/>
+                <stop offset="100%" stop-color="#a591cb"/>
+              </linearGradient>
+            </defs>
+            <rect width="100" height="100" rx="22" fill="url(#logo-grad)"/>
+            <path d="M30 76 L30 28 Q30 24 34 24 L52 24 Q68 24 68 38 Q68 52 52 52 L40 52" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M52 52 Q66 56 58 66 Q50 76 38 72" stroke="#d4a574" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+            <circle cx="72" cy="28" r="3" fill="#ffffff" opacity="0.5"/>
+            <circle cx="32" cy="80" r="2.5" fill="#d4a574" opacity="0.5"/>
+          </svg>
+        </div>
         <div class="logo-text">
-          <span class="logo-name" itemprop="name">Patrícia Sena</span>
+          <span class="logo-name">Patrícia Sena</span>
           <span class="logo-subtitle">Neuroeducação & Psicopedagogia</span>
         </div>
       </a>
@@ -226,11 +227,11 @@
           <span></span>
           <span></span>
         </button>
-        <ul class="nav-list" id="nav-list" role="menubar">
-          <li role="none"><a href="#sobre" role="menuitem">Sobre</a></li>
-          <li role="none"><a href="#atuacao" role="menuitem">Áreas de Atuação</a></li>
-          <li role="none"><a href="#como-funciona" role="menuitem">Como Funciona</a></li>
-          <li role="none"><a href="#contato" class="nav-cta" role="menuitem">Contato</a></li>
+        <ul class="nav-list" id="nav-list">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#atuacao">Áreas de Atuação</a></li>
+          <li><a href="#como-funciona">Como Funciona</a></li>
+          <li><a href="#contato" class="nav-cta">Contato</a></li>
         </ul>
       </nav>
     </div>
@@ -239,7 +240,7 @@
   <!-- HERO -->
   <main id="conteudo-principal" role="main">
     <section id="topo" class="hero" aria-labelledby="hero-titulo">
-      <div class="container hero-inner">
+      <div class="hero-inner">
         <div class="hero-content">
           <span class="hero-pill">Apoio especializado para crianças e adolescentes</span>
           <h1 id="hero-titulo">
@@ -252,42 +253,30 @@
           </p>
           <div class="hero-actions">
             <a href="#contato" class="btn btn-primary">Agendar contato</a>
-            <a href="#atuacao" class="btn btn-secondary">Ver áreas de atuação</a>
           </div>
-          <ul class="hero-badges">
-            <li>Acolhimento à família</li>
-            <li>Visão integral da criança</li>
-            <li>Plano de intervenção personalizado</li>
-          </ul>
         </div>
 
         <div class="hero-image-wrapper">
+          <div class="hero-circle-decoration" aria-hidden="true"></div>
           <div class="hero-image">
             <img
-              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=500&fit=crop&crop=faces"
-              alt="Criança estudando com atenção e concentração em ambiente de aprendizagem"
-              title="Atendimento psicopedagógico para crianças em São Paulo"
+              src="fotos/patricia-sena-atendimento-removebg-preview.png"
+              alt="Patrícia Sena, psicopedagoga e neuroeducadora, em seu consultório em São Paulo"
+              title="Patrícia Sena - Psicopedagoga e Neuroeducadora"
               loading="eager"
               width="600"
-              height="500"
+              height="520"
               fetchpriority="high"
-              itemprop="image"
             >
           </div>
-          <div class="hero-floating-card">
-            <div class="hero-floating-card-inner">
-              <div class="hero-floating-icon">🧠</div>
-              <div class="hero-floating-text">
-                <h4>Neuroeducação</h4>
-                <p>Aprendizagem com base científica</p>
-              </div>
-            </div>
-          </div>
-          <div class="hero-floating-card-2">
-            <span class="stat-number">+</span>
-            <span class="stat-label">Atendimento<br>Personalizado</span>
-          </div>
         </div>
+      </div>
+
+      <!-- Wave transition -->
+      <div class="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,70 L1440,120 L0,120 Z" fill="#ffffff"/>
+        </svg>
       </div>
     </section>
 
@@ -296,12 +285,12 @@
       <div class="container section-image-grid">
         <figure class="section-image">
           <img
-            src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=500&h=450&fit=crop"
-            alt="Ambiente acolhedor e seguro para sessões de psicopedagogia com crianças"
-            title="Consultório de psicopedagogia em São Paulo"
+            src="fotos/patricia-sena-livro-winnicott.jpeg"
+            alt="Patrícia Sena segurando livro de Winnicott, demonstrando seu embasamento teórico em psicopedagogia"
+            title="Patrícia Sena - Fundamentação teórica e prática"
             loading="lazy"
             width="500"
-            height="450"
+            height="440"
             decoding="async"
           >
         </figure>
@@ -318,7 +307,7 @@
             o desenvolvimento cognitivo, emocional e social.
           </p>
           <p>
-            O objetivo é ir além do “fazer lição”, criando condições para que o
+            O objetivo é ir além do "fazer lição", criando condições para que o
             estudante se sinta capaz, confiante e protagonista do próprio processo
             de aprendizagem.
           </p>
@@ -340,7 +329,7 @@
       </div>
     </section>
 
-    <!-- ÁREAS DE ATUAÇÃO -->
+    <!-- AREAS DE ATUACAO -->
     <section id="atuacao" class="section">
       <div class="container">
         <header class="section-header">
@@ -401,6 +390,31 @@
       </div>
     </section>
 
+    <!-- FRASE / INSTITUCIONAL -->
+    <section class="section-quote" aria-label="Sobre Patrícia Sena">
+      <div class="container quote-grid">
+        <figure class="quote-image">
+          <img
+            src="fotos/patricia-sena-psicopedagoga.jpeg"
+            alt="Patrícia Sena em ambiente acolhedor, transmitindo confiança e empatia"
+            title="Patrícia Sena - Acolhimento e conexão"
+            loading="lazy"
+            width="500"
+            height="440"
+            decoding="async"
+          >
+        </figure>
+        <div class="quote-content">
+          <blockquote>
+            Cada criança tem um jeito único de aprender. Meu trabalho é criar
+            condições para que ela se descubra capaz, encontre confiança no
+            próprio caminho e construa uma relação positiva com o aprender.
+          </blockquote>
+          <cite>Patrícia Sena, Psicopedagoga e Neuroeducadora</cite>
+        </div>
+      </div>
+    </section>
+
     <!-- COMO FUNCIONA -->
     <section id="como-funciona" class="section section-alt">
       <div class="container">
@@ -455,7 +469,7 @@
     </section>
 
     <!-- CONTATO -->
-    <section id="contato" class="section">
+    <section id="contato" class="section contact-section">
       <div class="container contact-grid">
         <div class="section-text">
           <h2>Contato</h2>
@@ -465,24 +479,36 @@
             sobre a criança ou adolescente e a sua principal preocupação no momento.
           </p>
 
-          <address class="contact-card" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+          <figure class="contact-photo">
+            <img
+              src="fotos/patricia-sena-consultorio.jpeg"
+              alt="Patrícia Sena em seu consultório, sentada no sofá com postura acolhedora"
+              title="Entre em contato com Patrícia Sena"
+              loading="lazy"
+              width="500"
+              height="280"
+              decoding="async"
+            >
+          </figure>
+
+          <address class="contact-card">
             <h3>Dados de contato</h3>
             <ul class="contact-list">
               <li>
                 <span class="contact-label">WhatsApp:</span>
-                <a href="https://wa.me/5511942318641" target="_blank" rel="noopener noreferrer" itemprop="telephone" aria-label="Enviar mensagem no WhatsApp">
+                <a href="https://wa.me/5511942318641" target="_blank" rel="noopener noreferrer" aria-label="Enviar mensagem no WhatsApp">
                   (11) 94231-8641
                 </a>
               </li>
               <li>
                 <span class="contact-label">E-mail:</span>
-                <a href="mailto:patriciasenaeducar@gmail.com" itemprop="email" aria-label="Enviar e-mail">
+                <a href="mailto:patriciasenaeducar@gmail.com" aria-label="Enviar e-mail">
                   patriciasenaeducar@gmail.com
                 </a>
               </li>
               <li>
                 <span class="contact-label">Cidade:</span>
-                <span itemprop="addressLocality">São Paulo</span> – <span itemprop="addressRegion">SP</span>
+                <span>São Paulo</span> – <span>SP</span>
               </li>
               <li>
                 <span class="contact-label">Público atendido:</span>
@@ -540,7 +566,7 @@
                   const formMessage = document.getElementById('form-message');
                   const form = e.target;
 
-                  // Desabilitar botão durante envio
+                  // Desabilitar botao durante envio
                   submitBtn.disabled = true;
                   submitBtn.textContent = 'Enviando...';
                   formMessage.textContent = '';
@@ -558,14 +584,14 @@
 
                       if (result.success) {
                           formMessage.style.color = '#22c55e';
-                          formMessage.textContent = '✓ Mensagem enviada com sucesso! Entraremos em contato em breve.';
+                          formMessage.textContent = 'Mensagem enviada com sucesso! Entraremos em contato em breve.';
                           form.reset();
                       } else {
                           throw new Error(result.message);
                       }
                   } catch (error) {
                       formMessage.style.color = '#ef4444';
-                      formMessage.textContent = '✗ Erro ao enviar mensagem. Tente novamente ou entre em contato por e-mail.';
+                      formMessage.textContent = 'Erro ao enviar mensagem. Tente novamente ou entre em contato por e-mail.';
                   } finally {
                       submitBtn.disabled = false;
                       submitBtn.textContent = 'Enviar mensagem';
@@ -580,13 +606,27 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <span class="logo-mark logo-mark-sm">PS</span>
+        <span class="logo-mark logo-mark-sm" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="32" height="32" aria-hidden="true">
+            <defs>
+              <linearGradient id="logo-grad-ft" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#7a58be"/>
+                <stop offset="100%" stop-color="#a591cb"/>
+              </linearGradient>
+            </defs>
+            <rect width="100" height="100" rx="22" fill="url(#logo-grad-ft)"/>
+            <path d="M30 76 L30 28 Q30 24 34 24 L52 24 Q68 24 68 38 Q68 52 52 52 L40 52" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M52 52 Q66 56 58 66 Q50 76 38 72" stroke="#d4a574" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+            <circle cx="72" cy="28" r="3" fill="#ffffff" opacity="0.5"/>
+            <circle cx="32" cy="80" r="2.5" fill="#d4a574" opacity="0.5"/>
+          </svg>
+        </span>
         <span class="footer-text">
-          Neuroeducação &amp; Psicopedagogia para crianças e adolescentes · São Paulo
+          Neuroeducação &amp; Psicopedagogia para crianças e adolescentes &middot; São Paulo
         </span>
       </div>
       <p class="footer-copy">
-        © <span id="year"></span> Patrícia Sena. Todos os direitos reservados.
+        &copy; <span id="year"></span> Patrícia Sena. Todos os direitos reservados.
       </p>
     </div>
   </footer>
