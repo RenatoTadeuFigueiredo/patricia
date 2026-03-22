@@ -48,15 +48,22 @@
   <meta name="theme-color" content="#7a58be">
   <meta name="msapplication-TileColor" content="#7a58be">
 
+  <!-- Google Analytics 4 — descomentar e substituir G-XXXXXXXXXX pelo Measurement ID -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+
   <!-- Preconnect para performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://wa.me">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
 
   <!-- Schema.org JSON-LD (Dados Estruturados) -->
   <script type="application/ld+json">
@@ -335,14 +342,18 @@
           <div class="hero-circle-decoration" aria-hidden="true"></div>
           <div class="hero-image">
             <img
-              src="fotos/patricia-sena-atendimento-removebg-preview.png"
-              alt="Patrícia Sena, psicopedagoga e neuroeducadora, em seu consultório em São Paulo"
-              title="Patrícia Sena - Psicopedagoga e Neuroeducadora"
-              loading="eager"
-              width="600"
-              height="520"
-              fetchpriority="high"
-            >
+            <picture>
+              <source srcset="fotos/patricia-sena-atendimento-hero.webp" type="image/webp">
+              <img
+                src="fotos/patricia-sena-atendimento-hero.png"
+                alt="Patrícia Sena, psicopedagoga e neuroeducadora, em seu consultório em São Paulo"
+                title="Patrícia Sena - Psicopedagoga e Neuroeducadora"
+                loading="eager"
+                width="600"
+                height="520"
+                fetchpriority="high"
+              >
+            </picture>
           </div>
         </div>
       </div>
@@ -360,15 +371,18 @@
       <div class="container">
         <div class="about-grid">
           <figure class="about-image">
-            <img
-              src="fotos/patricia-sena-livro-winnicott.jpeg"
-              alt="Patrícia Sena segurando livro de Winnicott, demonstrando seu embasamento teórico em psicopedagogia"
-              title="Patrícia Sena - Fundamentação teórica e prática"
-              loading="lazy"
-              width="500"
-              height="500"
-              decoding="async"
-            >
+            <picture>
+              <source srcset="fotos/patricia-sena-livro-winnicott.webp" type="image/webp">
+              <img
+                src="fotos/patricia-sena-livro-winnicott.jpeg"
+                alt="Patrícia Sena segurando livro de Winnicott, demonstrando seu embasamento teórico em psicopedagogia"
+                title="Patrícia Sena - Fundamentação teórica e prática"
+                loading="lazy"
+                width="500"
+                height="500"
+                decoding="async"
+              >
+            </picture>
           </figure>
           <div class="about-text">
             <h2>Sobre Patrícia Sena</h2>
@@ -508,15 +522,18 @@
     <section class="section-quote" aria-label="Sobre Patrícia Sena">
       <div class="container quote-grid">
         <figure class="quote-image">
-          <img
-            src="fotos/patricia-sena-psicopedagoga.jpeg"
-            alt="Patrícia Sena em ambiente acolhedor, transmitindo confiança e empatia"
-            title="Patrícia Sena - Acolhimento e conexão"
-            loading="lazy"
-            width="500"
-            height="440"
-            decoding="async"
-          >
+          <picture>
+            <source srcset="fotos/patricia-sena-psicopedagoga.webp" type="image/webp">
+            <img
+              src="fotos/patricia-sena-psicopedagoga.jpeg"
+              alt="Patrícia Sena em ambiente acolhedor, transmitindo confiança e empatia"
+              title="Patrícia Sena - Acolhimento e conexão"
+              loading="lazy"
+              width="500"
+              height="440"
+              decoding="async"
+            >
+          </picture>
         </figure>
         <div class="quote-content">
           <blockquote>
@@ -640,15 +657,18 @@
           </p>
 
           <figure class="contact-photo">
-            <img
-              src="fotos/patricia-sena-consultorio.jpeg"
-              alt="Patrícia Sena em seu consultório, sentada no sofá com postura acolhedora"
-              title="Entre em contato com Patrícia Sena"
-              loading="lazy"
-              width="500"
-              height="280"
-              decoding="async"
-            >
+            <picture>
+              <source srcset="fotos/patricia-sena-consultorio.webp" type="image/webp">
+              <img
+                src="fotos/patricia-sena-consultorio.jpeg"
+                alt="Patrícia Sena em seu consultório, sentada no sofá com postura acolhedora"
+                title="Entre em contato com Patrícia Sena"
+                loading="lazy"
+                width="500"
+                height="280"
+                decoding="async"
+              >
+            </picture>
           </figure>
 
           <address class="contact-card">

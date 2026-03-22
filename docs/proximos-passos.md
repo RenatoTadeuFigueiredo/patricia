@@ -1,6 +1,6 @@
 # Próximos Passos — patriciasenapsi.com.br
 
-> Última atualização: 2026-03-20
+> Última atualização: 2026-03-21
 
 ---
 
@@ -11,25 +11,13 @@
 - **Como:** Seguir o guia em `docs/google-business-profile-guide.md`
 - **Tempo estimado:** ~1h15min
 
-### 2. Criar og-image.jpg
-- **Impacto:** Todo compartilhamento no WhatsApp/Facebook/LinkedIn fica sem imagem
-- **Como:** Criar uma imagem 1200x630px com:
-  - Uma foto da Patrícia (ex: `patricia-sena-consultorio.jpeg`)
-  - Nome: "Patrícia Sena"
-  - Texto: "Psicopedagoga em São Paulo"
-  - Subtexto: "Neuroeducação para Crianças e Adolescentes"
-  - Cores da marca (roxo `#7a58be`, fundo claro)
-- **Ferramentas:** Canva, Figma ou Photoshop
-- **Salvar em:** raiz do projeto como `og-image.jpg`
+### ~~2. Criar og-image.jpg~~ ✅ Concluído em 2026-03-21
+- Gerada com foto `patricia-sena-consultorio.jpeg` + gradiente da marca + textos
+- Arquivo: `og-image.jpg` (1200x630px)
 
-### 3. Gerar favicons PNG
-- **Impacto:** Navegadores sem suporte a SVG mostram ícone genérico
-- **Como:**
-  1. Acessar https://realfavicongenerator.net
-  2. Fazer upload do `favicon.svg`
-  3. Baixar o pacote gerado
-  4. Colocar na raiz: `favicon-32x32.png`, `favicon-16x16.png`, `apple-touch-icon.png`
-- **Tempo estimado:** 5min
+### ~~3. Gerar favicons PNG~~ ✅ Concluído em 2026-03-21
+- Gerados via `rsvg-convert`: 16x16, 32x32, 180x180 (apple-touch), 192x192, 512x512 (android-chrome)
+- `site.webmanifest` atualizado com ícones PNG
 
 ### 4. Criar Instagram profissional
 - **Impacto:** Canal #1 de verificação de confiança no Brasil para serviços de saúde/educação
@@ -43,14 +31,10 @@
   - Adicionar URL no `sameAs` do Schema.org JSON-LD
   - Postar 1-2x por semana (dicas para pais, frases, bastidores)
 
-### 5. Cadastrar no Google Search Console
-- **Impacto:** Permite acompanhar indexação, erros e quais buscas levam ao site
-- **Como:**
-  1. Acessar https://search.google.com/search-console
-  2. Adicionar propriedade: `https://patriciasenapsi.com.br`
-  3. Verificar via DNS no Cloudflare (adicionar registro TXT)
-  4. Submeter o sitemap: `https://patriciasenapsi.com.br/sitemap.xml`
-- **Tempo estimado:** 15min
+### ~~5. Cadastrar no Google Search Console~~ ✅ Concluído em 2026-03-21
+- Propriedade verificada, sitemap submetido e processado
+- 1 página indexada, 8 cliques registrados
+- Schema.org (LocalBusiness, FAQPage) reconhecido pelo Google
 
 ---
 
@@ -68,17 +52,14 @@
 - **LinkedIn** — Perfil profissional com link para o site
 - Manter NAP (Nome, Endereço, Telefone) idêntico em todos
 
-### 8. Converter imagens para WebP
-- Reduz ~30-50% do tamanho dos arquivos
-- Usar https://squoosh.app para converter
-- Manter JPEG como fallback com `<picture>` tag
-- Renomear `patricia-sena-atendimento-removebg-preview.png` para algo mais limpo
+### ~~8. Converter imagens para WebP~~ ✅ Concluído em 2026-03-21
+- 6 imagens convertidas para WebP (65% de redução total: 921KB → 322KB)
+- HTML atualizado com `<picture>` tags + fallback JPEG/PNG
+- Hero renomeado para `patricia-sena-atendimento-hero.png/webp`
 
-### 9. Adicionar analytics
-- **Opção simples (privacidade):** Plausible Analytics — https://plausible.io
-- **Opção completa (gratuita):** Google Analytics 4
-- Adicionar o script no `<head>` do `index.html`
-- Acompanhar: visitas, origem do tráfego, páginas mais vistas
+### ~~9. Adicionar analytics~~ ✅ Concluído em 2026-03-21
+- GA4 placeholder adicionado no `<head>` (comentado)
+- Para ativar: criar conta GA4, obter Measurement ID (`G-XXXXXXXXXX`), descomentar o bloco no HTML
 
 ### 10. Coletar avaliações no Google
 - Após criar o Google Business Profile
@@ -119,26 +100,25 @@
   - `/avaliacao-psicopedagogica`
 - Cada página ranqueia para suas próprias keywords
 
-### 14. Self-hospedar fonte Inter
-- Baixar de https://rsms.me/inter/
-- Adicionar os arquivos `.woff2` ao projeto
-- Usar `@font-face` no CSS
-- Remover dependência do Google Fonts
-- Melhora velocidade e privacidade
+### ~~14. Self-hospedar fonte Inter~~ ✅ Concluído em 2026-03-21
+- Inter variable font (woff2) baixada em `fonts/` (133KB total)
+- `@font-face` com `font-display: swap` no CSS
+- Google Fonts removido do HTML (zero dependência externa)
 
 ---
 
 ## Checklist rápido
 
 - [ ] Google Business Profile
-- [ ] og-image.jpg (1200x630px)
-- [ ] Favicons PNG (realfavicongenerator.net)
+- [x] og-image.jpg (1200x630px) — 2026-03-21
+- [x] Favicons PNG — 2026-03-21
 - [ ] Instagram profissional
-- [ ] Google Search Console + submeter sitemap
+- [x] Google Search Console + submeter sitemap — 2026-03-21
 - [ ] 3-5 depoimentos reais
 - [ ] Cadastro em diretórios (Doctoralia, LinkedIn)
-- [ ] Converter imagens para WebP
-- [ ] Analytics (Plausible ou GA4)
+- [x] Converter imagens para WebP — 2026-03-21
+- [x] Analytics GA4 (placeholder pronto) — 2026-03-21
 - [ ] Avaliações no Google (meta: 5 em 2 meses)
 - [ ] Blog — 1º artigo
 - [ ] Google Posts — 1ª publicação
+- [x] Self-host fonte Inter — 2026-03-21
