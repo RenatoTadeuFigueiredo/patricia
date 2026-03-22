@@ -1133,6 +1133,17 @@ body {
   height: 32px;
 }
 
+.footer-social {
+  margin: 0.5rem 0;
+}
+.footer-social a {
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+.footer-social a:hover {
+  color: var(--primary);
+}
+
 .footer-copy {
   margin: 0;
 }

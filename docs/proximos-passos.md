@@ -19,17 +19,10 @@
 - Gerados via `rsvg-convert`: 16x16, 32x32, 180x180 (apple-touch), 192x192, 512x512 (android-chrome)
 - `site.webmanifest` atualizado com ícones PNG
 
-### 4. Criar Instagram profissional
-- **Impacto:** Canal #1 de verificação de confiança no Brasil para serviços de saúde/educação
-- **Como:**
-  1. Criar conta profissional no Instagram
-  2. Usar as fotos profissionais do site
-  3. Bio: "Psicopedagoga e Neuroeducadora | Crianças e Adolescentes | São Paulo"
-  4. Link para o site
-- **Depois de criar:**
-  - Adicionar link no footer e seção de contato do site
-  - Adicionar URL no `sameAs` do Schema.org JSON-LD
-  - Postar 1-2x por semana (dicas para pais, frases, bastidores)
+### ~~4. Criar Instagram profissional~~ ✅ Concluído em 2026-03-21
+- Perfil: @patricia_sena_psicopedagoga
+- Link adicionado na seção de contato, footer (com ícone SVG) e Schema.org `sameAs`
+- **Pendente:** postar 1-2x por semana (dicas para pais, frases, bastidores)
 
 ### ~~5. Cadastrar no Google Search Console~~ ✅ Concluído em 2026-03-21
 - Propriedade verificada, sitemap submetido e processado
@@ -112,7 +105,7 @@
 - [ ] Google Business Profile
 - [x] og-image.jpg (1200x630px) — 2026-03-21
 - [x] Favicons PNG — 2026-03-21
-- [ ] Instagram profissional
+- [x] Instagram profissional — 2026-03-21
 - [x] Google Search Console + submeter sitemap — 2026-03-21
 - [ ] 3-5 depoimentos reais
 - [ ] Cadastro em diretórios (Doctoralia, LinkedIn)
