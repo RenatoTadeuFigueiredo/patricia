@@ -1022,6 +1022,9 @@
 
       try {
         const formData = new FormData(form);
+        // Marca que veio do fetch: o Worker responde JSON quando js=1 e faz
+        // 303 para /obrigado.html quando o campo nao vem (POST nativo sem JS).
+        formData.set('js', '1');
 
         const response = await fetch(form.action, {
           method: 'POST',

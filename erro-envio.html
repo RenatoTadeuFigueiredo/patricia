@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Não foi possível enviar | Patrícia Sena</title>
+  <!-- Pagina de retorno do formulario: nao deve competir com a home na busca -->
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#7a58be">
+
+  <link rel="stylesheet" href="/style.css" />
+
+  <style>
+    .form-result {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      gap: 1rem;
+    }
+
+    .form-result-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(185, 28, 28, 0.08);
+      color: #b91c1c;
+    }
+
+    .form-result h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .form-result p {
+      max-width: 34rem;
+      margin: 0;
+      color: var(--text-soft);
+    }
+
+    .form-result .btn {
+      margin-top: 0.5rem;
+    }
+
+    .form-result-contacts {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="form-result">
+    <span class="form-result-icon" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 8v5M12 16.5v.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg>
+    </span>
+    <h1>Não conseguimos enviar sua mensagem</h1>
+    <p>
+      Houve uma falha no envio e sua mensagem não chegou. Nada foi registrado,
+      então vale tentar de novo ou usar um dos contatos diretos abaixo.
+    </p>
+    <a href="https://wa.me/5511942318641?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20psicopedag%C3%B3gico"
+       class="btn btn-primary" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+    <p class="form-result-contacts">
+      Ou por e-mail: <a href="mailto:patriciasenaeducar@gmail.com">patriciasenaeducar@gmail.com</a>
+    </p>
+    <a href="/#contato">Voltar e tentar novamente</a>
+  </main>
+</body>
+</html>
