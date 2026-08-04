@@ -1,0 +1,12 @@
+# Worker do formulario de contato.
+# Deploy:  cd worker && wrangler deploy
+#
+# O secret RESEND_API_KEY NAO fica aqui. Ele vive no Cloudflare e e preservado
+# entre deploys. Para (re)definir:  wrangler secret put RESEND_API_KEY --name formulario
+name = "formulario"
+main = "formulario.js"
+compatibility_date = "2025-12-01"
+workers_dev = true
+
+[observability]
+enabled = true
