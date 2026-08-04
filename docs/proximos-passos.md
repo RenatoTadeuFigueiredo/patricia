@@ -8,25 +8,55 @@
 
 ## Pendências que NÃO são código (precisam de você / da Patrícia)
 
-### DNS: `www` não resolve
-`dig www.patriciasenapsi.com.br` não retorna nada. Quem digita o endereço com `www`
-(padrão comum, e o que muita gente escreve em cartão de visita) recebe erro de DNS.
-Adicionar CNAME `www` na zona Cloudflare + redirect 301 para o apex.
+### ~~DNS: `www` não resolve~~ ✅ Resolvido em 2026-08-04
 
-### Worker do formulário: validar o honeypot
-O formulário agora envia um campo oculto `website`. O Worker
-(`formulario.renato-tadeu-figueiredo.workers.dev`) precisa **rejeitar** qualquer submit
-em que `website` não esteja vazio — é bot. O bloqueio no cliente já existe, mas o
-endpoint é público e pode ser chamado direto.
+Antes: `dig www.patriciasenapsi.com.br` não retornava nada — erro de DNS puro para quem
+digitasse o endereço com `www`. O próprio painel da Cloudflare sinalizava
+*"Visitors cannot reach www.patriciasenapsi.com.br"*.
+
+Feito:
+1. CNAME `www` → `patriciasenapsi.com.br`, **Proxied**, TTL Auto.
+2. Redirect Rule `www to apex (301, preserves path and query)`.
+
+O template "Redirect from WWW to root" da Cloudflare **não bastou**: ele casa por
+`URI Full wildcard r"https://www.*"`, que ignora `http://`. Resultado era 522 em
+`http://www` (o CNAME aponta para o apex, que é Pages, e `www` não é custom domain lá,
+então a requisição chegava à origem e morria). Trocado por expressão agnóstica de esquema:
+
+```
+# match
+http.host eq "www.patriciasenapsi.com.br"
+# target (dynamic, 301, preserve query string marcado)
+concat("https://patriciasenapsi.com.br", http.request.uri.path)
+```
+
+Verificado: `https://www/`, `http://www/`, `https://www/obrigado`,
+`https://www/erro-envio?x=1` — todos **301 em 1 hop** para o apex, path e query
+preservados. Apex e o 404 seguem intactos.
+
+> A Redirect Rule roda na borda **antes** de contatar a origem, então o 522 nunca acontece.
+> `www` não precisa ser custom domain no projeto Pages.
+
+### ~~Worker do formulário: validar o honeypot~~ ✅ Resolvido em 2026-08-04
+Feito e verificado em produção. Fonte agora versionado em `worker/` — ver
+`worker/README.md`. Além do honeypot: allowlist de origem (o CORS era `*`), resposta
+303 para o POST sem JS, e paramos de vazar `details`/`error` ao cliente.
+
+**Ainda aberto no Worker:** sem rate limiting (é regra de WAF no painel) e sem limite
+de tamanho nos campos.
 
 ### GA4 ainda comentado
 O bloco no `<head>` continua comentado. A **Cloudflare Web Analytics já está ativa**
 (o beacon `static.cloudflareinsights.com` carrega em produção), então há dados básicos.
 Para eventos de conversão (clique no WhatsApp, envio do form) o GA4 é necessário.
 
-### Domínio de preview do Cloudflare Pages
-Conferir se o `*.pages.dev` do projeto está indexável. Se estiver, bloquear via
-robots.txt no preview ou desabilitar acesso público às branch previews.
+### ~~Domínio de preview do Cloudflare Pages~~ ✅ Verificado em 2026-08-04
+É `patricia-723.pages.dev`. Responde 200 e o `robots.txt` de lá diz `Allow: /`, mas o
+`<link rel="canonical">` servido aponta para `https://patriciasenapsi.com.br/` — o Google
+consolida no domínio real. Risco baixo, nada a fazer.
+
+Um `noindex` de verdade só sairia com um Pages Function interceptando por hostname
+(`_headers` não permite condição por host), o que não se paga.
 
 ---
 
@@ -187,7 +217,10 @@ duração das sessões, instrumentos usados). Não inventar — pedir para ela.
 - [ ] Google Posts — 1ª publicação
 - [x] Self-host fonte Inter — 2026-03-21
 - [x] Auditoria SEO completa + correções de código — 2026-08-04 (`docs/seo-audit-2026-08-04.md`)
-- [ ] **DNS: adicionar `www` + 301 para o apex** (fora do repo)
-- [ ] **Worker: rejeitar submits com o honeypot `website` preenchido** (fora do repo)
+- [x] DNS `www` + Redirect Rule 301 para o apex — 2026-08-04
+- [x] Worker endurecido (honeypot, allowlist de origem, 303 sem JS, sem vazamentos) — 2026-08-04
+- [x] Preview `*.pages.dev` verificado (canonical resolve) — 2026-08-04
 - [ ] Páginas de serviço (item 13) — bloqueado, precisa de conteúdo da Patrícia
 - [ ] Reenviar sitemap no Search Console após este deploy
+- [ ] Rate limiting no formulário (regra de WAF no painel)
+- [ ] Teste ponta a ponta do Resend (envia e-mail real para a Patrícia)
