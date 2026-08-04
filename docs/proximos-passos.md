@@ -45,6 +45,26 @@ Feito e verificado em produção. Fonte agora versionado em `worker/` — ver
 **Ainda aberto no Worker:** sem rate limiting (é regra de WAF no painel) e sem limite
 de tamanho nos campos.
 
+### ~~Reenviar sitemap no Search Console~~ ✅ Feito em 2026-08-04
+
+**Atenção para o futuro:** a propriedade do Search Console está na conta
+**`renato.tadeu.figueiredo@gmail.com`**, não em `renato@eonf.ltd`. É uma propriedade de
+domínio (`sc-domain:patriciasenapsi.com.br`), verificada por TXT no DNS. Na conta errada
+o painel só responde *"Ops, você não tem acesso a esta propriedade"* — o que parece site
+não cadastrado. Use `search.google.com/u/1/search-console`.
+
+Feito:
+- Sitemap reenviado. Antes: última leitura **25/mar/2026**, ou seja, anterior a todas as
+  mudanças. Status Processado, 1 página encontrada.
+- Inspeção de URL na home → **Solicitar indexação**. Entrou na fila de rastreamento
+  prioritário. É isso que acelera o recrawl; o sitemap sozinho é passivo.
+
+Estado observado: 1 página indexada, 3 cliques no período, HTTPS ok.
+
+**A "1 página não indexada" é benigna:** o URL é `http://patriciasenapsi.com.br/` (sem TLS),
+motivo *"Página com redirecionamento"*. O Google indexa o destino HTTPS e marca a origem do
+301 como não-indexada. Comportamento correto, não mexer.
+
 ### GA4 ainda comentado
 O bloco no `<head>` continua comentado. A **Cloudflare Web Analytics já está ativa**
 (o beacon `static.cloudflareinsights.com` carrega em produção), então há dados básicos.
@@ -207,7 +227,7 @@ duração das sessões, instrumentos usados). Não inventar — pedir para ela.
 - [x] og-image.jpg (1200x630px) — 2026-03-21
 - [x] Favicons PNG — 2026-03-21
 - [x] Instagram profissional — 2026-03-21
-- [x] Google Search Console + submeter sitemap — 2026-03-21
+- [x] Google Search Console + submeter sitemap — 2026-03-21 (conta `renato.tadeu.figueiredo@gmail.com`)
 - [ ] 3-5 depoimentos reais
 - [ ] Cadastro em diretórios (Doctoralia → BR Terapeutas → LinkedIn)
 - [x] Converter imagens para WebP — 2026-03-21
@@ -221,6 +241,6 @@ duração das sessões, instrumentos usados). Não inventar — pedir para ela.
 - [x] Worker endurecido (honeypot, allowlist de origem, 303 sem JS, sem vazamentos) — 2026-08-04
 - [x] Preview `*.pages.dev` verificado (canonical resolve) — 2026-08-04
 - [ ] Páginas de serviço (item 13) — bloqueado, precisa de conteúdo da Patrícia
-- [ ] Reenviar sitemap no Search Console após este deploy
+- [x] Reenviar sitemap + solicitar indexação no Search Console — 2026-08-04
 - [ ] Rate limiting no formulário (regra de WAF no painel)
 - [ ] Teste ponta a ponta do Resend (envia e-mail real para a Patrícia)
