@@ -65,6 +65,42 @@ Estado observado: 1 página indexada, 3 cliques no período, HTTPS ok.
 motivo *"Página com redirecionamento"*. O Google indexa o destino HTTPS e marca a origem do
 301 como não-indexada. Comportamento correto, não mexer.
 
+### ~~Crawlers de IA estavam bloqueados~~ ✅ Liberado em 2026-08-04
+
+Descoberto ao perguntar "e o lado LLM?" — a auditoria original cobriu SEO clássico e passou
+batido nisso. A Cloudflare bloqueava crawlers de IA por **default**, ninguém escolheu.
+
+Eram dois mecanismos independentes, ambos no painel em **AI Crawl Control**:
+
+1. **Security → "Block AI bots" scope** = `Block on all pages`. Um master switch que
+   devolvia **403 na borda** e **sobrescrevia os 32 toggles individuais** — os toggles
+   ficavam inertes, com tooltip *"This crawler is being blocked by the Block AI Bots
+   security setting"*. Mudado para `Do not block (allow crawlers)`.
+2. **Signals → "Managed robots.txt"** = ON. Injetava, **antes** do nosso robots.txt,
+   um `Content-Signal: search=yes,ai-train=no,use=reference` mais `Disallow: /` para
+   Amazonbot, Applebot-Extended, Bytespider, CCBot, ClaudeBot, Google-Extended, GPTBot e
+   meta-externalagent. Desligado — o `robots.txt` voltou a ser só o nosso.
+
+A página Signals registrava violações reais: GPTBot, ClaudeBot, Amazonbot e CCBot com
+1 violação cada, ou seja, tentaram e levaram não.
+
+Verificado depois: 15 crawlers testados (GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot,
+Claude-User, Claude-SearchBot, PerplexityBot, Perplexity-User, CCBot, meta-externalagent,
+Amazonbot, Applebot, Bytespider, Google-CloudVertexBot, DuckAssistBot) — **todos 200 com
+conteúdo**. Googlebot e Bingbot seguem 200. 0 de 32 bloqueados no painel.
+
+**Isto é irreversível na prática:** conteúdo já coletado para treino não sai de modelo
+treinado. Decisão consciente do Renato em 2026-08-04.
+
+**Armadilha na medição:** testar com `curl -A "GPTBot"` do próprio IP mede *bot falsificado*,
+não o bot real — a Cloudflare valida por IP/assinatura. Na primeira medição OAI-SearchBot e
+PerplexityBot deram 403 e eu concluí errado que estavam bloqueados por política; os toggles
+deles estavam desligados. Para saber o que está bloqueado **de fato**, olhe o painel, não o curl.
+
+### llms.txt não existe (não feito, de propósito)
+`/llms.txt` → 404. O Lighthouse checa, daí aparecer como falha. Nenhum provedor grande
+confirmou usar o formato. Custo baixo, benefício especulativo — não priorizado.
+
 ### GA4 ainda comentado
 O bloco no `<head>` continua comentado. A **Cloudflare Web Analytics já está ativa**
 (o beacon `static.cloudflareinsights.com` carrega em produção), então há dados básicos.
@@ -240,6 +276,8 @@ duração das sessões, instrumentos usados). Não inventar — pedir para ela.
 - [x] DNS `www` + Redirect Rule 301 para o apex — 2026-08-04
 - [x] Worker endurecido (honeypot, allowlist de origem, 303 sem JS, sem vazamentos) — 2026-08-04
 - [x] Preview `*.pages.dev` verificado (canonical resolve) — 2026-08-04
+- [x] Crawlers de IA liberados (master switch + managed robots.txt) — 2026-08-04
+- [ ] llms.txt — decidido não fazer (benefício especulativo)
 - [ ] Páginas de serviço (item 13) — bloqueado, precisa de conteúdo da Patrícia
 - [x] Reenviar sitemap + solicitar indexação no Search Console — 2026-08-04
 - [ ] Rate limiting no formulário (regra de WAF no painel)
