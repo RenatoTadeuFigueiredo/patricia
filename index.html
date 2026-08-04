@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-BR" itemscope itemtype="https://schema.org/WebPage">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO Basico -->
-  <title>Psicopedagoga em São Paulo | Patrícia Sena - Neuroeducação e Psicopedagogia</title>
-  <meta name="description" content="Psicopedagoga em São Paulo especializada em neuroeducação para crianças e adolescentes. Atendimento de dificuldades de aprendizagem, TDAH, dislexia, desatenção e desenvolvimento socioemocional. Agende uma consulta!">
-  <meta name="keywords" content="psicopedagoga São Paulo, neuroeducação, psicopedagogia clínica, dificuldades de aprendizagem, TDAH, dislexia, psicopedagoga infantil, avaliação psicopedagógica, reforço escolar SP, tratamento dislexia, psicopedagoga SP zona sul, atendimento psicopedagógico, psicopedagoga zona leste, psicopedagoga Itaquera">
+  <title>Psicopedagoga em São Paulo (Itaquera) | Patrícia Sena</title>
+  <meta name="description" content="Psicopedagoga em Itaquera, Zona Leste de São Paulo: avaliação e apoio para TDAH, dislexia e dificuldades de aprendizagem. Fale pelo WhatsApp.">
+  <meta name="keywords" content="psicopedagoga São Paulo, psicopedagoga Itaquera, psicopedagoga zona leste, neuroeducação, psicopedagogia clínica, dificuldades de aprendizagem, TDAH, dislexia, psicopedagoga infantil, avaliação psicopedagógica, tratamento dislexia, atendimento psicopedagógico">
   <meta name="author" content="Patrícia Sena">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="googlebot" content="index, follow">
@@ -25,8 +25,8 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Patrícia Sena - Psicopedagoga">
-  <meta property="og:title" content="Psicopedagoga em São Paulo | Patrícia Sena - Neuroeducação">
-  <meta property="og:description" content="Psicopedagoga especializada em neuroeducação para crianças e adolescentes. Atendimento de dificuldades de aprendizagem, TDAH, dislexia e desatenção em São Paulo.">
+  <meta property="og:title" content="Psicopedagoga em São Paulo (Itaquera) | Patrícia Sena">
+  <meta property="og:description" content="Psicopedagoga em Itaquera, Zona Leste de São Paulo: avaliação e apoio para TDAH, dislexia e dificuldades de aprendizagem. Fale pelo WhatsApp.">
   <meta property="og:url" content="https://patriciasenapsi.com.br/">
   <meta property="og:image" content="https://patriciasenapsi.com.br/og-image.jpg">
   <meta property="og:image:width" content="1200">
@@ -35,8 +35,8 @@
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Psicopedagoga em São Paulo | Patrícia Sena">
-  <meta name="twitter:description" content="Neuroeducação e psicopedagogia para crianças e adolescentes. Atendimento especializado em dificuldades de aprendizagem.">
+  <meta name="twitter:title" content="Psicopedagoga em São Paulo (Itaquera) | Patrícia Sena">
+  <meta name="twitter:description" content="Neuroeducação e psicopedagogia para crianças e adolescentes na Zona Leste de São Paulo. Apoio em TDAH, dislexia e dificuldades de aprendizagem.">
   <meta name="twitter:image" content="https://patriciasenapsi.com.br/og-image.jpg">
 
   <!-- Favicon e icones -->
@@ -62,8 +62,35 @@
   <!-- Preconnect para performance -->
   <link rel="dns-prefetch" href="https://wa.me">
 
+  <!-- Preload dos recursos criticos para o LCP -->
+  <!-- Apenas inter-latin.woff2: o subset latin-ext comeca em U+0100 e nao cobre nenhum acento pt-BR -->
+  <link rel="preload" as="font" type="font/woff2" href="fonts/inter-latin.woff2" crossorigin>
+  <link rel="preload" as="image" href="fotos/patricia-sena-atendimento-hero.webp" type="image/webp" fetchpriority="high">
+
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Sem JS o toggle do menu nao funciona: deixa a lista sempre visivel e esconde o botao -->
+  <noscript>
+    <style>
+      @media (max-width: 768px) {
+        .nav-toggle { display: none !important; }
+        .nav-list {
+          position: static !important;
+          opacity: 1 !important;
+          pointer-events: auto !important;
+          transform: none !important;
+          margin-top: 0.5rem !important;
+          box-shadow: none !important;
+          border: 0 !important;
+          background: transparent !important;
+          padding: 0 !important;
+          flex-direction: row !important;
+          flex-wrap: wrap !important;
+        }
+      }
+    </style>
+  </noscript>
 
   <!-- Schema.org JSON-LD (Dados Estruturados) -->
   <script type="application/ld+json">
@@ -85,11 +112,6 @@
           "addressLocality": "São Paulo",
           "addressRegion": "SP",
           "addressCountry": "BR"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "-23.5396",
-          "longitude": "-46.4539"
         },
         "areaServed": [
           {
@@ -118,6 +140,11 @@
         "jobTitle": "Psicopedagoga e Neuroeducadora",
         "description": "Psicopedagoga e neuroeducadora com mais de 16 anos dedicados à educação de crianças e adolescentes. Formada em História, pós-graduada em Neuroeducação e Psicopedagogia Clínica, com atuação clínica e institucional desde 2017. Coautora do livro Caráter se aprende. Atualmente cursando Psicologia para aprofundar sua compreensão do desenvolvimento humano.",
         "url": "https://patriciasenapsi.com.br",
+        "image": "https://patriciasenapsi.com.br/fotos/patricia-sena-livro-winnicott.webp",
+        "telephone": "+55-11-94231-8641",
+        "sameAs": [
+          "https://www.instagram.com/patricia_sena_psicopedagoga"
+        ],
         "worksFor": {
           "@id": "https://patriciasenapsi.com.br/#business"
         },
@@ -144,19 +171,41 @@
           {
             "@type": "EducationalOccupationalCredential",
             "credentialCategory": "Licenciatura",
-            "name": "Licenciatura em História"
+            "name": "Licenciatura em História",
+            "recognizedBy": {
+              "@type": "CollegeOrUniversity",
+              "name": "Universidade Camilo Castelo Branco"
+            }
           },
           {
             "@type": "EducationalOccupationalCredential",
             "credentialCategory": "Pós-graduação",
-            "name": "Neuroeducação"
+            "name": "Neuroeducação",
+            "recognizedBy": {
+              "@type": "CollegeOrUniversity",
+              "name": "Instituto de Neuroeducação - FACON"
+            }
           },
           {
             "@type": "EducationalOccupationalCredential",
             "credentialCategory": "Pós-graduação",
-            "name": "Psicopedagogia Clínica"
+            "name": "Psicopedagogia Clínica",
+            "recognizedBy": {
+              "@type": "CollegeOrUniversity",
+              "name": "Faculdade da Aldeia de Carapicuíba - FALC"
+            }
           }
         ]
+      },
+      {
+        "@type": "Book",
+        "@id": "https://patriciasenapsi.com.br/#livro-carater-se-aprende",
+        "name": "Caráter se aprende",
+        "about": "Formação ética e emocional nas escolas",
+        "inLanguage": "pt-BR",
+        "author": {
+          "@id": "https://patriciasenapsi.com.br/#person"
+        }
       },
       {
         "@type": "Service",
@@ -203,6 +252,23 @@
         "inLanguage": "pt-BR"
       },
       {
+        "@type": "WebPage",
+        "@id": "https://patriciasenapsi.com.br/#webpage",
+        "url": "https://patriciasenapsi.com.br/",
+        "name": "Psicopedagoga em São Paulo (Itaquera) | Patrícia Sena",
+        "description": "Psicopedagoga em Itaquera, Zona Leste de São Paulo: avaliação e apoio para TDAH, dislexia e dificuldades de aprendizagem.",
+        "isPartOf": {
+          "@id": "https://patriciasenapsi.com.br/#website"
+        },
+        "about": {
+          "@id": "https://patriciasenapsi.com.br/#business"
+        },
+        "primaryImageOfPage": "https://patriciasenapsi.com.br/og-image.jpg",
+        "datePublished": "2025-12-01",
+        "dateModified": "2026-08-04",
+        "inLanguage": "pt-BR"
+      },
+      {
         "@type": "FAQPage",
         "@id": "https://patriciasenapsi.com.br/#faq",
         "mainEntity": [
@@ -219,7 +285,7 @@
             "name": "Para quem é indicado o atendimento psicopedagógico?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "O atendimento é indicado para crianças e adolescentes com dificuldades de aprendizagem, desatenção e desorganização, desempenho escolar abaixo do esperado, dificuldades na leitura, escrita ou matemática, ansiedade relacionada à escola e transição de ciclos escolares."
+              "text": "O atendimento é indicado para crianças e adolescentes com dificuldades de aprendizagem, dislexia e outros transtornos específicos de aprendizagem, desatenção e desorganização, desempenho escolar abaixo do esperado, dificuldades na leitura, escrita ou matemática, ansiedade relacionada à escola e transição de ciclos escolares."
             }
           },
           {
@@ -235,7 +301,15 @@
             "name": "O atendimento é presencial ou online?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "O atendimento é exclusivamente presencial em São Paulo. O endereço do consultório é informado no momento do agendamento."
+              "text": "O atendimento é exclusivamente presencial em Itaquera, na Zona Leste de São Paulo, atendendo também bairros vizinhos como José Bonifácio, Artur Alvim, Vila Matilde, Guaianases, Cidade Tiradentes, São Mateus e Ermelino Matarazzo. O endereço exato do consultório é informado no momento do agendamento. O horário de atendimento é de segunda a sexta, das 8h às 18h."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Psicopedagogia é a mesma coisa que reforço escolar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. O reforço escolar reensina o conteúdo que a criança não aprendeu na aula. A psicopedagogia investiga por que ela não está aprendendo — como ela processa informação, onde a leitura, a escrita ou o raciocínio travam — e constrói estratégias para destravar esse processo. O foco não é a matéria da prova, é o modo de aprender."
             }
           },
           {
@@ -283,7 +357,7 @@
   <!-- HEADER / NAV -->
   <header class="header" role="banner">
     <div class="container header-inner">
-      <a href="/" class="logo" aria-label="Patrícia Sena - Ir para o início">
+      <a href="/" class="logo" aria-label="Patrícia Sena, Neuroeducação &amp; Psicopedagogia — ir para o início">
         <div class="logo-mark" aria-hidden="true">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="42" height="42" aria-hidden="true">
             <defs>
@@ -328,13 +402,14 @@
         <div class="hero-content">
           <span class="hero-pill">Apoio especializado para crianças e adolescentes</span>
           <h1 id="hero-titulo">
-            Psicopedagoga em São Paulo <br>
+            Psicopedagoga em Itaquera, São Paulo <br>
             <span class="hero-highlight">Neuroeducação para Crianças e Adolescentes</span>
           </h1>
           <p class="hero-subtitle">
             Mais de 16 anos dedicados a entender como cada criança aprende.
-            Atendimento presencial em São Paulo, focado em dificuldades de aprendizagem,
-            atenção, organização e desenvolvimento socioemocional.
+            Atendimento presencial em Itaquera, na Zona Leste de São Paulo, focado em
+            dificuldades de aprendizagem, dislexia, TDAH, atenção, organização e
+            desenvolvimento socioemocional.
           </p>
           <div class="hero-actions">
             <a href="#contato" class="btn btn-primary">Agendar contato</a>
@@ -344,16 +419,14 @@
         <div class="hero-image-wrapper">
           <div class="hero-circle-decoration" aria-hidden="true"></div>
           <div class="hero-image">
-            <img
             <picture>
               <source srcset="fotos/patricia-sena-atendimento-hero.webp" type="image/webp">
               <img
                 src="fotos/patricia-sena-atendimento-hero.png"
-                alt="Patrícia Sena, psicopedagoga e neuroeducadora, em seu consultório em São Paulo"
-                title="Patrícia Sena - Psicopedagoga e Neuroeducadora"
+                alt="Patrícia Sena, psicopedagoga e neuroeducadora, em seu consultório em Itaquera, São Paulo"
                 loading="eager"
-                width="600"
-                height="520"
+                width="407"
+                height="612"
                 fetchpriority="high"
               >
             </picture>
@@ -375,14 +448,18 @@
         <div class="about-grid">
           <figure class="about-image">
             <picture>
-              <source srcset="fotos/patricia-sena-livro-winnicott.webp" type="image/webp">
+              <source
+                type="image/webp"
+                srcset="fotos/patricia-sena-livro-winnicott-400w.webp 400w,
+                        fotos/patricia-sena-livro-winnicott-700w.webp 700w,
+                        fotos/patricia-sena-livro-winnicott.webp 1065w"
+                sizes="(max-width: 768px) calc(100vw - 2.5rem), 500px">
               <img
                 src="fotos/patricia-sena-livro-winnicott.jpeg"
                 alt="Patrícia Sena segurando livro de Winnicott, demonstrando seu embasamento teórico em psicopedagogia"
-                title="Patrícia Sena - Fundamentação teórica e prática"
                 loading="lazy"
-                width="500"
-                height="500"
+                width="1065"
+                height="1600"
                 decoding="async"
               >
             </picture>
@@ -424,7 +501,9 @@
           <h3>Para quem é indicado</h3>
           <ul class="chip-list">
             <li>Dificuldades de aprendizagem</li>
+            <li>Dislexia e outros transtornos específicos de aprendizagem</li>
             <li>Desatenção e desorganização</li>
+            <li>Apoio à criança com TDAH</li>
             <li>Desempenho escolar abaixo do esperado</li>
             <li>Dificuldades na leitura, escrita ou matemática</li>
             <li>Ansiedade relacionada à escola</li>
@@ -526,14 +605,18 @@
       <div class="container quote-grid">
         <figure class="quote-image">
           <picture>
-            <source srcset="fotos/patricia-sena-psicopedagoga.webp" type="image/webp">
+            <source
+              type="image/webp"
+              srcset="fotos/patricia-sena-psicopedagoga-400w.webp 400w,
+                      fotos/patricia-sena-psicopedagoga-700w.webp 700w,
+                      fotos/patricia-sena-psicopedagoga.webp 1065w"
+              sizes="(max-width: 768px) calc(100vw - 2.5rem), 500px">
             <img
               src="fotos/patricia-sena-psicopedagoga.jpeg"
               alt="Patrícia Sena em ambiente acolhedor, transmitindo confiança e empatia"
-              title="Patrícia Sena - Acolhimento e conexão"
               loading="lazy"
-              width="500"
-              height="440"
+              width="1065"
+              height="1600"
               decoding="async"
             >
           </picture>
@@ -597,15 +680,15 @@
 
         <div class="info-banner">
           <p>
-            <strong>Atendimento exclusivamente presencial em São Paulo.</strong><br>
-            O endereço do consultório é informado no momento do agendamento.
+            <strong>Atendimento exclusivamente presencial em Itaquera, Zona Leste de São Paulo.</strong><br>
+            Segunda a sexta, das 8h às 18h. O endereço do consultório é informado no momento do agendamento.
           </p>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="section section-alt">
+    <section id="faq" class="section">
       <div class="container">
         <header class="section-header">
           <h2>Perguntas Frequentes</h2>
@@ -618,7 +701,7 @@
           </details>
           <details class="faq-item">
             <summary class="faq-question">Para quem é indicado o atendimento psicopedagógico?</summary>
-            <div class="faq-answer"><p>O atendimento é indicado para crianças e adolescentes com dificuldades de aprendizagem, desatenção e desorganização, desempenho escolar abaixo do esperado, dificuldades na leitura, escrita ou matemática, ansiedade relacionada à escola e transição de ciclos escolares.</p></div>
+            <div class="faq-answer"><p>O atendimento é indicado para crianças e adolescentes com dificuldades de aprendizagem, dislexia e outros transtornos específicos de aprendizagem, desatenção e desorganização, desempenho escolar abaixo do esperado, dificuldades na leitura, escrita ou matemática, ansiedade relacionada à escola e transição de ciclos escolares.</p></div>
           </details>
           <details class="faq-item">
             <summary class="faq-question">Como funciona o atendimento psicopedagógico?</summary>
@@ -626,7 +709,11 @@
           </details>
           <details class="faq-item">
             <summary class="faq-question">O atendimento é presencial ou online?</summary>
-            <div class="faq-answer"><p>O atendimento é exclusivamente presencial em São Paulo. O endereço do consultório é informado no momento do agendamento.</p></div>
+            <div class="faq-answer"><p>O atendimento é exclusivamente presencial em Itaquera, na Zona Leste de São Paulo, atendendo também bairros vizinhos como José Bonifácio, Artur Alvim, Vila Matilde, Guaianases, Cidade Tiradentes, São Mateus e Ermelino Matarazzo. O endereço exato do consultório é informado no momento do agendamento. O horário de atendimento é de segunda a sexta, das 8h às 18h.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Psicopedagogia é a mesma coisa que reforço escolar?</summary>
+            <div class="faq-answer"><p>Não. O reforço escolar reensina o conteúdo que a criança não aprendeu na aula. A psicopedagogia investiga por que ela não está aprendendo — como ela processa informação, onde a leitura, a escrita ou o raciocínio travam — e constrói estratégias para destravar esse processo. O foco não é a matéria da prova, é o modo de aprender.</p></div>
           </details>
           <details class="faq-item">
             <summary class="faq-question">Quando devo procurar uma psicopedagoga para meu filho?</summary>
@@ -661,14 +748,18 @@
 
           <figure class="contact-photo">
             <picture>
-              <source srcset="fotos/patricia-sena-consultorio.webp" type="image/webp">
+              <source
+                type="image/webp"
+                srcset="fotos/patricia-sena-consultorio-400w.webp 400w,
+                        fotos/patricia-sena-consultorio-700w.webp 700w,
+                        fotos/patricia-sena-consultorio.webp 1065w"
+                sizes="(max-width: 768px) calc(100vw - 2.5rem), 500px">
               <img
                 src="fotos/patricia-sena-consultorio.jpeg"
-                alt="Patrícia Sena em seu consultório, sentada no sofá com postura acolhedora"
-                title="Entre em contato com Patrícia Sena"
+                alt="Patrícia Sena em seu consultório em Itaquera, sentada no sofá com postura acolhedora"
                 loading="lazy"
-                width="500"
-                height="280"
+                width="1065"
+                height="1600"
                 decoding="async"
               >
             </picture>
@@ -677,7 +768,7 @@
           <address class="contact-card">
             <h3>Dados de contato</h3>
 
-            <a href="https://wa.me/5511942318641?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20psicopedag%C3%B3gico" target="_blank" rel="noopener noreferrer" class="contact-whatsapp-cta" aria-label="Enviar mensagem no WhatsApp">
+            <a href="https://wa.me/5511942318641?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20psicopedag%C3%B3gico" target="_blank" rel="noopener noreferrer" class="contact-whatsapp-cta">
               <span class="contact-icon contact-icon--whatsapp">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="currentColor"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2a8.16 8.16 0 01-4.29-1.21l-.308-.183-2.87.853.853-2.87-.183-.308A8.16 8.16 0 013.8 12 8.2 8.2 0 0112 3.8 8.2 8.2 0 0120.2 12 8.2 8.2 0 0112 20.2z" fill="currentColor"/></svg>
               </span>
@@ -688,6 +779,13 @@
               <svg class="contact-whatsapp-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
 
+            <a href="tel:+5511942318641" class="contact-tel-cta">
+              <span class="contact-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15.05 5A5 5 0 0119 8.95M15.05 1A9 9 0 0123 8.94m-1 7.98v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>Ligar: (11) 94231-8641</span>
+            </a>
+
             <ul class="contact-list">
               <li>
                 <span class="contact-icon">
@@ -695,7 +793,7 @@
                 </span>
                 <div class="contact-item-content">
                   <span class="contact-label">E-mail</span>
-                  <a href="mailto:patriciasenaeducar@gmail.com" aria-label="Enviar e-mail">
+                  <a href="mailto:patriciasenaeducar@gmail.com">
                     patriciasenaeducar@gmail.com
                   </a>
                 </div>
@@ -706,7 +804,7 @@
                 </span>
                 <div class="contact-item-content">
                   <span class="contact-label">Instagram</span>
-                  <a href="https://www.instagram.com/patricia_sena_psicopedagoga" target="_blank" rel="noopener noreferrer" aria-label="Perfil no Instagram">
+                  <a href="https://www.instagram.com/patricia_sena_psicopedagoga" target="_blank" rel="noopener noreferrer">
                     @patricia_sena_psicopedagoga
                   </a>
                 </div>
@@ -716,8 +814,17 @@
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
                 </span>
                 <div class="contact-item-content">
-                  <span class="contact-label">Cidade</span>
-                  <span>São Paulo – SP</span>
+                  <span class="contact-label">Localização</span>
+                  <span>Itaquera – Zona Leste de São Paulo, SP</span>
+                </div>
+              </li>
+              <li>
+                <span class="contact-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div class="contact-item-content">
+                  <span class="contact-label">Horário de atendimento</span>
+                  <span>Segunda a sexta, 8h às 18h</span>
                 </div>
               </li>
               <li>
@@ -730,6 +837,15 @@
                 </div>
               </li>
             </ul>
+
+            <div class="service-area">
+              <h4>Área de atendimento</h4>
+              <p>
+                Consultório em <strong>Itaquera</strong>, com atendimento presencial a famílias de
+                toda a Zona Leste de São Paulo: José Bonifácio, Artur Alvim, Vila Matilde,
+                Guaianases, Cidade Tiradentes, São Mateus e Ermelino Matarazzo.
+              </p>
+            </div>
           </address>
         </div>
 
@@ -740,7 +856,16 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                     Suas informações são confidenciais e serão utilizadas exclusivamente para contato sobre o atendimento.
                   </p>
-                  <form class="contact-form" id="contact-form">
+                  <!-- action/method garantem que o envio funcione mesmo se o JS falhar; o fetch abaixo e progressive enhancement -->
+                  <form class="contact-form" id="contact-form"
+                        action="https://formulario.renato-tadeu-figueiredo.workers.dev"
+                        method="POST">
+
+                      <!-- Honeypot: invisivel para humanos, preenchido por bots. Rejeitar no Worker quando nao vazio. -->
+                      <div class="form-honeypot" aria-hidden="true">
+                          <label for="website">Website</label>
+                          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                      </div>
 
                       <div class="form-group">
                           <label for="nome">Nome do responsável</label>
@@ -772,51 +897,11 @@
                           Enviar mensagem
                       </button>
 
-                      <p id="form-message" style="margin-top: 0.75rem; font-size: 0.85rem; text-align: center;"></p>
+                      <p id="form-message" role="status" aria-live="polite" aria-atomic="true"></p>
                   </form>
               </div>
           </div>
 
-          <script>
-              document.getElementById('contact-form').addEventListener('submit', async (e) => {
-                  e.preventDefault();
-
-                  const submitBtn = document.getElementById('submit-btn');
-                  const formMessage = document.getElementById('form-message');
-                  const form = e.target;
-
-                  // Desabilitar botao durante envio
-                  submitBtn.disabled = true;
-                  submitBtn.textContent = 'Enviando...';
-                  formMessage.textContent = '';
-
-                  try {
-                      const formData = new FormData(form);
-
-                      // IMPORTANTE: Troque pela URL do seu Worker
-                      const response = await fetch('https://formulario.renato-tadeu-figueiredo.workers.dev', {
-                          method: 'POST',
-                          body: formData,
-                      });
-
-                      const result = await response.json();
-
-                      if (result.success) {
-                          formMessage.style.color = '#22c55e';
-                          formMessage.textContent = 'Mensagem enviada com sucesso! Entraremos em contato em breve.';
-                          form.reset();
-                      } else {
-                          throw new Error(result.message);
-                      }
-                  } catch (error) {
-                      formMessage.style.color = '#ef4444';
-                      formMessage.textContent = 'Erro ao enviar mensagem. Tente novamente ou entre em contato por e-mail.';
-                  } finally {
-                      submitBtn.disabled = false;
-                      submitBtn.textContent = 'Enviar mensagem';
-                  }
-              });
-          </script>
       </div>
     </section>
   </main>
@@ -896,6 +981,68 @@
         navToggle.classList.remove('nav-toggle-open');
         navToggle.setAttribute('aria-expanded', 'false');
         navToggle.focus();
+      }
+    });
+
+    // Esconde o botao flutuante do WhatsApp quando o botao de envio do formulario
+    // esta na tela, para que o float nao cubra nem roube o toque do CTA principal.
+    // Observamos o proprio botao (threshold 0): a secao #contato e mais alta que a
+    // viewport, entao qualquer threshold baseado nela nunca dispararia no mobile.
+    const whatsappFloat = document.querySelector('.whatsapp-float');
+    const submitButton = document.getElementById('submit-btn');
+
+    if (whatsappFloat && submitButton && 'IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => {
+        whatsappFloat.classList.toggle('is-hidden', entry.isIntersecting);
+      }, { threshold: 0 }).observe(submitButton);
+    }
+
+    // Envio do formulario de contato via fetch (progressive enhancement).
+    // Sem JS, o form faz POST nativo para o mesmo endpoint via action/method.
+    document.getElementById('contact-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const submitBtn = document.getElementById('submit-btn');
+      const formMessage = document.getElementById('form-message');
+      const form = e.target;
+
+      // Honeypot preenchido: bot. Finge sucesso e nao envia nada.
+      if (form.elements.website && form.elements.website.value.trim() !== '') {
+        formMessage.className = 'form-message-success';
+        formMessage.textContent = 'Mensagem enviada com sucesso! Entraremos em contato em breve.';
+        form.reset();
+        return;
+      }
+
+      // Desabilitar botao durante envio
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+      formMessage.className = '';
+      formMessage.textContent = '';
+
+      try {
+        const formData = new FormData(form);
+
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          formMessage.className = 'form-message-success';
+          formMessage.textContent = 'Mensagem enviada com sucesso! Entraremos em contato em breve.';
+          form.reset();
+        } else {
+          throw new Error(result.message);
+        }
+      } catch (error) {
+        formMessage.className = 'form-message-error';
+        formMessage.textContent = 'Erro ao enviar mensagem. Tente novamente ou entre em contato por e-mail.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar mensagem';
       }
     });
   </script>

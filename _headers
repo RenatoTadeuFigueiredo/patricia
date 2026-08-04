@@ -1,0 +1,23 @@
+# Cloudflare Pages — cabecalhos de resposta
+# Padrao do Pages e max-age=14400 (4h) para tudo. Fotos e fontes nunca mudam
+# de conteudo sem mudar de nome, entao podem ser cacheadas por 1 ano.
+
+/fotos/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# style.css nao tem hash no nome: cache de 1 dia para nao segurar deploys.
+# Se um dia adotarmos versionamento (style.css?v=N), pode subir para immutable.
+/style.css
+  Cache-Control: public, max-age=86400
+
+/*.png
+  Cache-Control: public, max-age=2592000
+
+/*.jpg
+  Cache-Control: public, max-age=2592000
+
+/*.svg
+  Cache-Control: public, max-age=2592000

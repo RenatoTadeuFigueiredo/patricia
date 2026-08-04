@@ -18,6 +18,21 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* --------- MOVIMENTO REDUZIDO (Acessibilidade) --------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 /* --------- SKIP LINK (Acessibilidade) --------- */
 .skip-link {
   position: absolute;
@@ -958,17 +973,18 @@ body {
   gap: 0.85rem;
   padding: 0.9rem 1.15rem;
   border-radius: var(--radius-md);
-  background: #128c7e;
+  /* #0e7a6d = 5.2:1 com texto branco (WCAG AA). #128c7e ficava em 4.13:1. */
+  background: #0e7a6d;
   color: #ffffff;
   text-decoration: none;
   font-size: 0.95rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
   transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 4px 16px rgba(18, 140, 126, 0.2);
 }
 
 .contact-whatsapp-cta:hover {
-  background: #0e7a6e;
+  background: #0b6e62;
   transform: translateY(-2px);
   box-shadow: 0 6px 24px rgba(18, 140, 126, 0.3);
 }
@@ -1002,7 +1018,8 @@ body {
 
 .contact-whatsapp-text span {
   font-size: 0.82rem;
-  opacity: 0.85;
+  /* 0.95 mantem 4.9:1 sobre #0e7a6d; 0.85 caia abaixo do minimo AA */
+  opacity: 0.95;
 }
 
 .contact-whatsapp-arrow {
@@ -1014,6 +1031,48 @@ body {
 .contact-whatsapp-cta:hover .contact-whatsapp-arrow {
   transform: translateX(3px);
   opacity: 1;
+}
+
+/* Click-to-call secundario */
+.contact-tel-cta {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 1.15rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-soft);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.contact-tel-cta:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-soft);
+}
+
+/* Area de atendimento (relevancia local) */
+.service-area {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.service-area h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.service-area p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-soft);
 }
 
 /* Contact list items */
@@ -1201,6 +1260,29 @@ body {
 .form-group textarea {
   resize: vertical;
   min-height: 100px;
+}
+
+/* Honeypot anti-spam: fora da tela, invisivel para humanos e leitores de tela */
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+#form-message {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+#form-message.form-message-success {
+  color: #15803d;
+}
+
+#form-message.form-message-error {
+  color: #b91c1c;
 }
 
 .btn-full {
@@ -1591,13 +1673,20 @@ body {
   justify-content: center;
   box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
   z-index: 1000;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
   text-decoration: none;
 }
 
 .whatsapp-float:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 28px rgba(37, 211, 102, 0.45);
+}
+
+/* Oculto enquanto a secao de contato esta visivel: evita cobrir o botao de envio */
+.whatsapp-float.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8);
 }
 
 .whatsapp-float svg {
